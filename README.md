@@ -1,9 +1,3 @@
-# waittimewizard-mobile
-
-Mobile app for viewing wait times at theme parks
-
-### Below is stock readme from expo
-
 # Welcome to your Expo app 👋
 
 This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
@@ -16,13 +10,19 @@ This is an [Expo](https://expo.dev) project created with [`create-expo-app`](htt
    npm install
    ```
 
-2. Start the app
+2. Install expo-dev-client for custom native development
 
    ```bash
-   npx expo start
+   npx expo install expo-dev-client
    ```
 
-In the output, you'll find options to open the app in a
+3. Start the app for ios native
+
+   ```bash
+   npx expo run:ios
+   ```
+
+If you run `npm start`, in the output, you'll find options to open the app in a
 
 - [development build](https://docs.expo.dev/develop/development-builds/introduction/)
 - [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
