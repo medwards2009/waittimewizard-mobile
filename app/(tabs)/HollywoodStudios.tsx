@@ -1,12 +1,12 @@
 import { Text } from 'react-native';
 
-import ThemedView from '@/components/themed-view';
+import ThemedImageBackground from '@/components/styled-image-background';
 
 const HollywoodStudios = () => {
   return (
-    <ThemedView>
+    <ThemedImageBackground source={require('@/assets/images/hs.jpg')}>
       <Text>Welcome to the Hollywood Studios!</Text>
-    </ThemedView>
+    </ThemedImageBackground>
   );
 };
 

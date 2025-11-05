@@ -1,12 +1,12 @@
 import { Text } from 'react-native';
 
-import ThemedView from '@/components/themed-view';
+import ThemedImageBackground from '@/components/styled-image-background';
 
 const MagicKingdom = () => {
   return (
-    <ThemedView>
+    <ThemedImageBackground source={require('@/assets/images/mk.jpg')}>
       <Text>Welcome to the Magic Kingdom!</Text>
-    </ThemedView>
+    </ThemedImageBackground>
   );
 };
 

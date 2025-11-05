@@ -1,12 +1,12 @@
 import { Text } from 'react-native';
 
-import ThemedView from '@/components/themed-view';
+import ThemedImageBackground from '@/components/styled-image-background';
 
 const Epcot = () => {
   return (
-    <ThemedView>
+    <ThemedImageBackground source={require('@/assets/images/epcot.jpg')}>
       <Text>Welcome to the Epcot!</Text>
-    </ThemedView>
+    </ThemedImageBackground>
   );
 };
 
