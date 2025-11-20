@@ -1,18 +1,26 @@
 import { StyleSheet, FlatList, View, Text } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingTop: 50, // Add padding for status bar and safe area
     paddingHorizontal: 20,
   },
+  listWrapper: {
+    backgroundColor: 'rgba(255, 255, 255, 0.7)', // Semi-transparent background
+    borderRadius: 20,
+  },
   item: {
-    padding: 10,
+    paddingHorizontal: 20,
+    paddingVertical: 10,
     fontSize: 18,
-    color: '#fff', // White text for better visibility on background
-    backgroundColor: 'rgba(0, 0, 0, 0.5)', // Semi-transparent background
+    borderBottomWidth: 1,
+    borderBottomColor: 'rgba(0, 0, 0, 0.1)',
     marginVertical: 5,
     borderRadius: 8,
+  },
+  lastItem: {
+    borderBottomWidth: 0,
   },
 });
 
@@ -22,9 +30,16 @@ interface TimesListProps {
 
 const TimesList: React.FC<TimesListProps> = ({ times }) => {
   return (
-    <View style={styles.container}>
-      <FlatList data={times} renderItem={({ item }) => <Text style={styles.item}>{item}</Text>} />
-    </View>
+    <SafeAreaView style={styles.container} edges={['top', 'left', 'right']}>
+      <View style={styles.listWrapper}>
+        <FlatList
+          data={times}
+          renderItem={({ item, index }) => (
+            <Text style={[styles.item, index === times.length - 1 && styles.lastItem]}>{item}</Text>
+          )}
+        />
+      </View>
+    </SafeAreaView>
   );
 };
 
